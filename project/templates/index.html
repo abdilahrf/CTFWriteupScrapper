@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}Scrapper for writeup!{% endblock %}
+
+{% block content %}
+<h3>Writeup From ctftime.org</h3>
+
+{% for a,b,c,d,e in data %}
+<a href ="https://ctftime.org{{a['href']}}">{{a.next}}</a> / <a href ="https://ctftime.org{{b['href']}}">{{b.next}}</a>  / {{c}} / <a href ="https://ctftime.org{{d['href']}}">{{d.next}}</a>  / <a href ="https://ctftime.org{{e['href']}}">{{e.next}}</a>  <br>
+{% endfor %}
+{% endblock %}
