@@ -2,7 +2,7 @@ from project import app,db
 from flask import Flask, render_template
 from models import Writeups
 from datetime import datetime
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 import urllib2,requests,cookielib,mechanize
 
 
@@ -48,7 +48,7 @@ def index():
 			break
 
 		
-		soup = BeautifulSoup(content)
+		soup = BeautifulSoup(content, 'html.parser')
 		x+=1
 
 		datas = soup.findAll('td')

@@ -12,6 +12,10 @@ listening at `127.0.0.1:31337`
 - urllib2
 - mechanize
 
+## Todo
+
+- Add SQLite db
+- Use datatables
 
 ## Screen Shoot
 
