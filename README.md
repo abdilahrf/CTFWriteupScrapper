@@ -2,8 +2,17 @@
 
 Scrap all writeup from http://ctftime.org/ and organize which to read first.
 
-run : `python runserver.py` to start the application.
-listening at `127.0.0.1:31337`
+Initialize SQLite DB:
+
+```
+python manage.py db init
+python manage.py db migrate
+python manage.py db upgrade
+```
+
+Start : `python runserver.py`
+
+Open from browser `127.0.0.1:31337`
 
 ## Requirment
 
@@ -14,8 +23,7 @@ listening at `127.0.0.1:31337`
 
 ## Todo
 
-- Add SQLite db
-- Use datatables
+Empty
 
 ## Screen Shoot
 
