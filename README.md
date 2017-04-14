@@ -14,6 +14,8 @@ Start : `python runserver.py`
 
 Open from browser `127.0.0.1:31337`
 
+Update your database with latest writeup from ctftime : `127.0.0.1:31337/feed/`
+
 ## Requirment
 
 - Flask
