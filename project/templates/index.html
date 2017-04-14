@@ -1,11 +1,38 @@
 {% extends "layout.html" %}
 
-{% block title %}Scrapper for writeup!{% endblock %}
+{% block title %}Scrapper writeup from ctftime!{% endblock %}
 
 {% block content %}
-<h3>Writeup From ctftime.org</h3>
 
-{% for a,b,c,d,e in data %}
-<a href ="https://ctftime.org{{a['href']}}">{{a.next}}</a> / <a href ="https://ctftime.org{{b['href']}}">{{b.next}}</a>  / {{c}} / <a href ="https://ctftime.org{{d['href']}}">{{d.next}}</a>  / <a href ="https://ctftime.org{{e['href']}}">{{e.next}}</a>  <br>
-{% endfor %}
+    <h3>Writeup From ctftime.org</h3>
+    <div style="padding: 40px 0;">
+        <img width="100PX" height="50PX" src="/static/images/ctftime.png">
+        <img width="100PX" height="50PX" src="/static/images/flask.png">
+        <img width="100PX" height="50PX" src="/static/images/sqllite.png">
+    </div>
+    <table id="example" class="display" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Task</th>
+                    <th style="width:50px;">Tags</th>
+                    <th>Author</th>
+                    <th>Ctftime URL</th>
+                    <th>Original Writeup</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in datas %}
+                    <tr>
+                        <td><a href ="https://ctftime.org{{ data['task'].split("|")[0] }}">{{ data['task'].split("|")[1] }}</a></td>
+                        <td><a href ="https://ctftime.org{{ data['event'].split("|")[0] }}">{{ data['event'].split("|")[1] }}</a></td>
+                        <td>{{ data['tags'] }}</td>
+                        <td><a href ="https://ctftime.org{{ data['author'].split("|")[0] }}">{{ data['author'].split("|")[1] }}</a></td>
+                        <td><a href ="https://ctftime.org{{ data['ctftime_link'] }}">Link</a></td>
+                        <td>{%  if data['original_writeup'] != "#" %}<a href={{ data['original_writeup'] }}>Read</a>{% else %} - {%  endif %}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+    </table>
+
 {% endblock %}

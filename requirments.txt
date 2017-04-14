@@ -1,1 +1,4 @@
 Flask-SQLAlchemy
+flask_script
+flask_migrate
+

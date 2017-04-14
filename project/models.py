@@ -1,18 +1,22 @@
-from flask_sqlalchemy import SQLAlchemy
+#from flask_sqlalchemy import SQLAlchemy
 from project import db
 
-class Writeups(db.Model):
-	__tablename__ = 'writeups'
-	idwriteup = db.Column(db.Integer, primary_key = True)
-	event = db.Column(db.String(100))
-	task = db.Column(db.String(100))
-	tags = db.Column(db.String(100))
-	author = db.Column(db.String(100))
-	writeup = db.Column(db.String(100))
 
-	def __init__(self, event = "", task = "", tags = "", author = "", writeup = ""):
-		self.event = event
-		self.task = task
-		self.tags = tags
-		self.author = author
-		self.writeup = writeup
+class Writeups(db.Model):
+    __tablename__ = 'writeups'
+    idwriteup = db.Column(db.Integer, primary_key=True)
+    event = db.Column(db.String(255))
+    task = db.Column(db.String(255))
+    tags = db.Column(db.String(255))
+    author = db.Column(db.String(255))
+    ctftime_link = db.Column(db.String(255))
+    original_writeup = db.Column(db.String(255))
+
+    def __init__(self, data):
+        self.idwriteup = int(data['idWriteup'])
+        self.event = str(data['event'])
+        self.task = str(data['task'])
+        self.tags = str(data['tags'])
+        self.author = str(data['author']).decode('utf-8', 'ignore')
+        self.ctftime_link = str(data['writeupUrl'])
+        self.original_writeup = str(data['originalWriteup'])
