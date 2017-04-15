@@ -29,7 +29,7 @@ Empty
 
 ## Screenshot
 
-![Screen Shoot](screenshoot.png)
+![Screen Shoot](screenshot.png)
 
 ## License
 
