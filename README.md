@@ -16,7 +16,7 @@ Open from browser `127.0.0.1:31337`
 
 Update your database with latest writeup from ctftime : `127.0.0.1:31337/feed/`
 
-## Requirment
+## Requirements
 
 - Flask
 - BeautifulSoup
@@ -27,7 +27,7 @@ Update your database with latest writeup from ctftime : `127.0.0.1:31337/feed/`
 
 Empty
 
-## Screen Shoot
+## Screenshot
 
 ![Screen Shoot](screenshoot.png)
 
